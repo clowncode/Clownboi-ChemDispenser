@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+
+<html>
+<title>SS13 Chem dispenser</title>
+<link rel="icon" href="Dispenser.png"></link>
+<script src="dispenser.js"></script>
+<script src="Objects.js"></script>
+<link rel="stylesheet" type="text/css" href="dispenser.css"></link>
+<body onload="ammore(5)">
+<div id ="chemical">
+<div id ="Dispenser">
+<table class=numbers>
+<td>
+<td> <p class="white">Dispense</p>
+<td>
+<td> <button type="button" id = 'a5' onclick ="ammore(5)">+5 </button>
+<td> <button type="button" id = 'a10' onclick ="ammore(10)">+10</button>
+<td> <button type="button" id = 'a15' onclick ="ammore(15)">+15</button>
+<td> <button type="button" id = 'a20' onclick ="ammore(20)">+20</button>
+<td> <button type="button" id = 'a25' onclick ="ammore(25)">+25</button>
+<td> <button type="button" id = 'a30' onclick ="ammore(30)">+30</button>
+<td> <button type="button" id = 'a50' onclick ="ammore(50)">+50</button>
+</table>
+<table class=buttons>
+<tr>
+<hr color="#40628A" "noshade"></hr>
+</tr>
+<td> <button type="button" class = "norm" onclick="yeet('dispense',aluminium,ammo)">         &#128167;Aluminium</button>
+<td> <button type="button" class = "norm" onclick="yeet('dispense',bromine,ammo)">             &#128167;Bromine</button>
+<td> <button type="button" class = "norm" onclick="yeet('dispense',carbon,ammo)">               &#128167;Carbon</button>
+<!--<td> <button type="button" class = "emag" onclick="yeet('dispense',carpotoxin,ammo)">       Carpotoxin</button>-->
+<!--<tr class="emagg">-->
+<td> <button type="button" class = "norm" onclick="yeet('dispense',chlorine,ammo)">           &#128167;Chlorine</button>
+</tr>
+<tr class ="normi">
+<td> <button type="button" class = "norm" onclick="yeet('dispense',copper,ammo)">               &#128167;Copper</button>
+<td> <button type="button" class = "norm" onclick="yeet('dispense',ethanol,ammo)">             &#128167;Ethanol</button>
+<td> <button type="button" class = "norm" onclick="yeet('dispense',fluorine,ammo)">           &#128167;Fluorine</button>
+<!--<tr class = "emagg">-->
+<td> <button type="button" class = "norm" onclick="yeet('dispense',hydrogen,ammo)">           &#128167;Hydrogen</button>
+<tr class ="normi">
+<td> <button type="button" class = "norm" onclick="yeet('dispense',iodine,ammo)">               &#128167;Iodine</button>
+<td> <button type="button" class = "norm" onclick="yeet('dispense',iron,ammo)">                   &#128167;Iron</button>
+<td> <button type="button" class = "norm" onclick="yeet('dispense',lithium,ammo)">             &#128167;Lithium</button>
+<!--<tr class = "emagg">-->
+<td> <button type="button" class = "norm" onclick="yeet('dispense',mercury,ammo)">             &#128167;Mercury</button>
+<tr class = "normi">
+<!--<td> <button type="button" class = "emag" onclick="yeet('dispense',miner_salve,ammo)">   Miner's Salve</button>
+<td> <button type="button" class = "emag" onclick="yeet('dispense',morphine,ammo)">           Morphine</button>-->
+<td> <button type="button" class = "norm" onclick="yeet('dispense',nitrogen,ammo)">           &#128167;Nitrogen</button>
+<!--<tr class = "emagg">-->
+<td> <button type="button" class = "norm" onclick="yeet('dispense',oxygen,ammo)">               &#128167;Oxygen</button>
+<td> <button type="button" class = "norm" onclick="yeet('dispense',phosphorus,ammo)">       &#128167;Phosphorus</button>
+<td> <button type="button" class = "norm" onclick="yeet('dispense',potassium,ammo)">         &#128167;Potassium</button>
+<tr class = "normi">
+<td> <button type="button" class = "norm" onclick="yeet('dispense',radium,ammo)">               &#128167;Radium</button>
+<!--<tr class = "emagg-->
+<td> <button type="button" class = "norm" onclick="yeet('dispense',sacid,ammo)">        &#128167;Sulphuric acid</button>
+<td> <button type="button" class = "norm" onclick="yeet('dispense',silicon,ammo)">             &#128167;Silicon</button>
+<td> <button type="button" class = "norm" onclick="yeet('dispense',silver,ammo)">               &#128167;Silver</button>
+<tr class = "normi">
+<td> <button type="button" class = "norm" onclick="yeet('dispense',sodium,ammo)">               &#128167;Sodium</button>
+<!--<tr class = "emagg">-->
+<!--<td> <button type="button" class = "emag" onclick="yeet('dispense',space_drugs,ammo)">     Space Drugs</button>-->
+<td> <button type="button" class = "norm" onclick="yeet('dispense',stable_plasma,ammo)"> &#128167;Stable Plasma</button>
+<td> <button type="button" class = "norm" onclick="yeet('dispense',sugar,ammo)">                 &#128167;Sugar</button>
+<td> <button type="button" class = "norm" onclick="yeet('dispense',sulfur,ammo)">               &#128167;Sulfur</button>
+<tr>
+<!--<td> <button type="button" class = "emag" onclick="yeet('dispense',toxin,ammo)">                 Toxin</button>-->
+<td> <button type="button" class = "norm" onclick="yeet('dispense',water,ammo)">                 &#128167;Water</button>
+<td> <button type="button" class = "norm" onclick="yeet('dispense',welding_fuel,ammo)">   &#128167;Welding Fuel</button>
+</table>
+</div>
+<image src='download.svg' alt="Nanotrasen" id = "back"></image>
+<div id="removal">
+<table class="negative">
+<td>
+<td> <p class = "white">Beaker</p>
+<td>
+<td> <button type="button" onclick="yeet('remove',0,5)">-5</button>
+<td> <button type="button" onclick="yeet('remove',0,10)">-10</button>
+<td> <button type="button" onclick="yeet('remove',0,15)">-15</button>
+<td> <button type="button" onclick="yeet('remove',0,20)">-20</button>
+<td> <button type="button" onclick="yeet('remove',0,25)">-25</button>
+<td> <button type="button" onclick="yeet('remove',0,30)">-30</button>
+<td> <button type="button" onclick="yeet('remove',0,50)">-50</button>
+<td> <button type="button" onclick="yeet('eject',0,0)">Eject</button>
+</table>
+<hr color="#40628A" "noshade"></hr>
+
+
+<!--<button onclick="emagged(1)">emagged</button>-->
+
+
+<p id='container' class = "white">0/100</p>
+<p id='shell'>
+
+<!--Recipes -->
+<p id='carpet'></p>
+<p id='barber_aid'></p>
+<p id='cbarber_aid'></p>
+<p id='co2'></p>
+<p id='drying_agent'></p>
+<p id='fluacid'></p>
+<p id='sulfonal'></p>
+<p id='lipolicide'></p>
+<p id='neurotoxin'></p>
+<p id='itching_powder'></p>
+<p id='heparin'></p>
+<p id='rotatium'></p>
+<p id='anacea'></p>
+<p id='Explosion'></p>
+<p id='thermite'></p>
+<p id='teslium'></p>
+<p id='mindbreaker_toxin'></p>
+<p id='testing'></p>
+<p id='Chloral_Hydrate'></p>
+<p id='sterilizine'></p>
+<p id='impedrezene'></p>
+<p id='cryptobiolin'></p>
+<p id='inacusiate'></p>
+<p id='foamer'></p>
+<p id='ash'></p>
+<p id='charcoal'></p>
+<p id='stypow'></p>
+<p id='salglu'></p>
+<p id='mannitol'></p>
+<p id='salicyclic_acid'></p>
+<p id='salbutamol'></p>
+<p id='bicaridine'></p>
+<p id='kelotane'></p>
+<p id='antitoxin'></p>
+<p id='tricordrazine'></p>
+<p id='unstable_mutagen'></p>
+<p id='cryoxadone'></p>
+<p id='oxandrolone'></p>
+<p id='formaldehyde'></p>
+<p id='cyanide'></p>
+<p id='pentetic_acid'></p>
+<p id='Perfluorodecalin'></p>
+<p id='calomel'></p>
+<p id='mutadone'></p>
+<p id='potassium_iodide'></p>
+<p id='ephedrine'></p>
+<p id='diphenhydramine'></p>
+<p id='oculine'></p>
+<p id='antihol'></p>
+<p id='synaptizine'></p>
+<p id='spaceacillin'></p>
+<p id='miner_salve'></p>
+<p id='haloperidol'></p>
+<p id='corazone'></p>
+<p id='krokodil'></p>
+<p id='crank'></p>
+<p id='methamphetamine'></p>
+<p id='aranesp'></p>
+<p id='pyrosium'></p>
+<p id='cryostalane'></p>
+<p id='chlorine_trifluoride'></p>
+<p id='meth_explode'></p>
+<p id='black_powder'></p>
+<p id='space_cleaner'></p>
+<p id='atropine'></p>
+<p id='space_drugs'></p>
+<p id='napalm'></p>
+<p id='space_lube'></p>
+<p id='oil'></p>
+<p id='phenol'></p>
+<p id='acetone'></p>
+<p id='diethylamine'></p>
+<p id='ammonia'></p>
+<p id='epinephrine'></p>
+<p id='saltpetre'></p>
+<p id='lye'></p>
+<p id='stable_agent'></p>
+<p id='Foam_surfactant'></p>
+<p id='smoke'></p>
+<p id='FlashP'></p>
+<p id='phlogiston'></p>
+<p id='sorium'></p>
+<p id='LDM'></p>
+<p id='Sodium_Chloride'></p>
+<p id='silver_sulfadiazine'></p>
+
+<!--Non Recipes-->
+<p id='hydrogen'></p>
+<p id='lithium'></p>
+<p id='carbon'></p>
+<p id='nitrogen'></p>
+<p id='oxygen'></p>
+<p id='fluorine'></p>
+<p id='sodium'></p>
+<p id='aluminium'></p>
+<p id='silicon'></p>
+<p id='phosphorus'></p>
+<p id='sulfur'></p>
+<p id='chlorine'></p>
+<p id='potassium'></p>
+<p id='iron'></p>
+<p id='copper'></p>
+<p id='mercury'></p>
+<p id='radium'></p>
+<p id='water'></p>
+<p id='ethanol'></p>
+<p id='sugar'></p>
+<p id='sacid'></p>
+<p id='welding_fuel'></p>
+<p id='silver'></p>
+<p id='iodine'></p>
+<p id='bromine'></p>
+<p id='stable_plasma'></p>
+</div>
+</div>
+
+
+</body>
+</html>
