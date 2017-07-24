@@ -4,6 +4,9 @@ var yeeeel = 0;
 var rmove = 0;
 var action;
 var saved;
+function round(value, decimals) {
+return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+}
 function yeet(action,typ,ammo){
 switch(action){
 case "dispense":
@@ -27,29 +30,38 @@ console.log(contain.chill() + "%");
 break;
 case "remove":
 var remov = [];
+var rato;
 for (var x = 0;x<=total.length - 1;x++){
-if (total[x].amount >= 1){
+if (total[x].amount > 0){
 remov.push(total[x]);}
 }
 console.log(remov);
-//alert('not working, back off');
 if (remov.length == 0){
 break;}
-rmove = ammo / remov.length - 1;
 console.log(rmove);
-/*
-rmove =
-ammo rmove remov.length contain.amount*/
-for (var x = 0;x<=remov.length - 1;x++){
-for (var y = 0;y<=rmove; y+= .2){
-remov[x].amount -= .2;
-contain.amount -= .2;
+ratiomaker(contain, contain.amount);
+for (var x = 0; x<=remov.length - 1; x++){
+ratiomaker(remov[x], remov[x].amount);
+rato = round((remov[x].ratio / contain.ratio) * ammo, 2);
+console.log(rato);
+remov[x].amount = round(remov[x].amount - rato, 2);
+contain.amount = round(contain.amount - rato, 2);
+if (remov[x].amount < 0) {
+contain.amount -= remov[x].amount;
+remov[x].amount = 0;
+}
+switch(remov[x].amount){
+case 0:
+document.getElementById(remov[x].name).innerHTML = "";
+document.getElementById('container').innerHTML = contain.amount + "/" + contain.max;
+break;
+default:
 document.getElementById(remov[x].name).innerHTML = remov[x].full();
 document.getElementById('container').innerHTML = contain.amount + "/" + contain.max;
-if (remov[x].amount == 0){
-document.getElementById(remov[x].name).innerHTML = "";
-break;
-}}}
+break;}
+
+}
+
 break;
 
 case "eject":
@@ -93,9 +105,10 @@ contain.amount++;
 console.log("adding " + ammo + " to " + nam);
 document.getElementById('container').innerHTML = contain.amount + "/" + contain.max;
 }}
-
 function ammore(more){
 for(var x = 0; x<= amore.length - 1; x++){
 document.getElementById(amore[x]).style.backgroundColor = "rgb(64,98,138)";}
 document.getElementById("a" + more).style.backgroundColor = "rgb(47,148,60)";
 ammo = more;}
+function ratiomaker(x,i) {
+x.ratio = i/5;}
